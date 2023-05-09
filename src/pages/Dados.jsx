@@ -11,7 +11,7 @@ import Footer from "../components/Footer/Footer";
 import { randomNumberGenerator } from "../utils/ProductosMedios";
 
 let messagesMatrix = [];
-const diceCalculus = (totalSimulations, totalGames, gamePrice, homeLost) => {
+const diceCalculus = (totalSimulations, totalGames, gamePrice) => {
   messagesMatrix = [];
   let simulationMatrix = []; //
   let homeWinCounter;
@@ -104,7 +104,6 @@ const Dados = ({ title }) => {
   const [totalSimulations, setTotalSimulations] = useState(0);
   const [totalGames, setTotalGames] = useState(0);
   const [gamePrice, setGamePrice] = useState(0);
-  const [homeLost, setHomeLost] = useState(0);
 
   const [headers, setHeaders] = useState([]);
   const titles = [
@@ -143,18 +142,14 @@ const Dados = ({ title }) => {
             message={"Costo del Juego"}
             onChange={(event) => setGamePrice(event.target.value)}
           />
-          <Input
-            message={"Pedida de la Casa"}
-            onChange={(event) => setHomeLost(event.target.value)}
-          />
+
+          <br />
 
           <Button
             text={"Calcular"}
             onClick={() => {
               setHeaders(titles);
-              setBody(
-                diceCalculus(totalSimulations, totalGames, gamePrice, homeLost)
-              );
+              setBody(diceCalculus(totalSimulations, totalGames, gamePrice));
               setInformation(messagesMatrix);
             }}
           />

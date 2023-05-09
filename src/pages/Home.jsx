@@ -43,7 +43,7 @@ const Home = () => {
         Clientes FALTA IMPLEMENTAR
       </button>
       <br />
-      <button onClick={() => changeScreen(4)}>Dados FALTA IMPLEMENTAR</button>
+      <button onClick={() => changeScreen(4)}>Dados</button>
       <br />
       <button onClick={() => changeScreen(5)}>Gallina FALTA IMPLEMENTAR</button>
       <br />
