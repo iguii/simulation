@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
 import Button from "../components/Button/Button";
 import Description from "../components/Description/Description";
@@ -142,6 +143,7 @@ const gallinaCalculus = (totalSimulations, days, chickenPrice, eggPrice) => {
 };
 
 const Gallina = ({ title }) => {
+  const navigate = useNavigate();
   const [totalSimulations, setTotalSimulations] = useState(0);
   const [days, setDays] = useState(0);
   const [chickenPrice, setChickenPrice] = useState(0);
@@ -200,10 +202,7 @@ const Gallina = ({ title }) => {
               setInformation(messagesMatrix);
             }}
           />
-          <Button
-            text="Volver al menu"
-            onClick={() => (window.location.href = "/")}
-          />
+          <Button text="Volver al menu" onClick={() => navigate("/")} />
         </div>
 
         <Table headers={headers} bodyTable={body} information={information} />

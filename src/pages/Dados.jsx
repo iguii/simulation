@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
 import Header from "../components/Header/Header";
 import Description from "../components/Description/Description";
@@ -101,6 +102,7 @@ const diceCalculus = (totalSimulations, totalGames, gamePrice) => {
 };
 
 const Dados = ({ title }) => {
+  const navigate = useNavigate();
   const [totalSimulations, setTotalSimulations] = useState(0);
   const [totalGames, setTotalGames] = useState(0);
   const [gamePrice, setGamePrice] = useState(0);
@@ -154,10 +156,7 @@ const Dados = ({ title }) => {
             }}
           />
 
-          <Button
-            text={"Volver al menu"}
-            onClick={() => (window.location.href = "/")}
-          />
+          <Button text={"Volver al menu"} onClick={() => navigate("/")} />
         </div>
 
         <Table headers={headers} bodyTable={body} information={information} />

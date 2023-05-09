@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
 import Description from "../components/Description/Description";
 import Header from "../components/Header/Header";
@@ -118,6 +119,7 @@ let sugarCalculus = (
 };
 
 const AgenciaDeAzucar = ({ title }) => {
+  const navigate = useNavigate();
   const [totalSimulations, setTotalSimulations] = useState(0);
   const [totalDays, setTotalDays] = useState(0);
   const [orderCost, setOrderCost] = useState(0);
@@ -191,10 +193,7 @@ const AgenciaDeAzucar = ({ title }) => {
               setInformation(messagesMatrix);
             }}
           />
-          <Button
-            text="Volver al menu"
-            onClick={() => (window.location.href = "/")}
-          />
+          <Button text="Volver al menu" onClick={() => navigate("/")} />
         </div>
         <Table headers={headers} bodyTable={body} information={information} />
       </div>
