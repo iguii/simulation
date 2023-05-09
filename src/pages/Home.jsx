@@ -45,11 +45,9 @@ const Home = () => {
       <br />
       <button onClick={() => changeScreen(4)}>Dados</button>
       <br />
-      <button onClick={() => changeScreen(5)}>Gallina FALTA IMPLEMENTAR</button>
+      <button onClick={() => changeScreen(5)}>Gallina</button>
       <br />
-      <button onClick={() => changeScreen(6)}>
-        Agencia de Azucar FALTA IMPLEMENTAR
-      </button>
+      <button onClick={() => changeScreen(6)}>Agencia de Azucar</button>
     </div>
   );
 };

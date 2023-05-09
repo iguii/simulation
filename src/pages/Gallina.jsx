@@ -8,6 +8,7 @@ import Input from "../components/Input/Input";
 
 import { randomNumberGenerator } from "../utils/ProductosMedios";
 import Table from "../components/Table/Table";
+import Footer from "../components/Footer/Footer";
 
 let messagesMatrix = [];
 const gallinaCalculus = (totalSimulations, days, chickenPrice, eggPrice) => {
@@ -199,10 +200,15 @@ const Gallina = ({ title }) => {
               setInformation(messagesMatrix);
             }}
           />
+          <Button
+            text="Volver al menu"
+            onClick={() => (window.location.href = "/")}
+          />
         </div>
 
         <Table headers={headers} bodyTable={body} information={information} />
       </div>
+      <Footer />
     </div>
   );
 };
