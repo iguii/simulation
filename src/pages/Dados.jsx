@@ -153,6 +153,11 @@ const Dados = ({ title }) => {
               setInformation(messagesMatrix);
             }}
           />
+
+          <Button
+            text={"Volver al menu"}
+            onClick={() => (window.location.href = "/")}
+          />
         </div>
 
         <Table headers={headers} bodyTable={body} information={information} />
