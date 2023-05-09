@@ -1,10 +1,12 @@
 import { useState } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Description from "../components/Description";
-import Input from "../components/Input";
-import Button from "../components/Button";
-import Table from "../components/Table";
+import PropTypes from "prop-types";
+
+import Header from "../components/Header/Header";
+import Description from "../components/Description/Description";
+import Input from "../components/Input/Input";
+import Button from "../components/Button/Button";
+import Table from "../components/Table/Table";
+import Footer from "../components/Footer/Footer";
 
 import { randomNumberGenerator } from "../utils/ProductosMedios";
 
@@ -163,6 +165,10 @@ const Dados = ({ title }) => {
       <Footer />
     </div>
   );
+};
+
+Dados.propTypes = {
+  title: PropTypes.string,
 };
 
 export default Dados;

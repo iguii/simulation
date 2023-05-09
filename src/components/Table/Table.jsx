@@ -1,4 +1,5 @@
-import React from "react";
+import PropTypes from "prop-types";
+
 import "./table.css";
 
 const Table = ({ headers, bodyTable, information }) => {
@@ -6,12 +7,12 @@ const Table = ({ headers, bodyTable, information }) => {
     <div className="general-container">
       {bodyTable.map((matrix, index) => {
         return (
-          <div className="table-container">
+          <div className="table-container" key={index}>
             <h4>Simulación número: {index + 1}</h4>
             <h4>Información:</h4>
 
-            {information.map((info, indexi) => (
-              <span className="information--separator">
+            {information.map((_, indexi) => (
+              <span className="information--separator" key={indexi}>
                 {information[index][indexi]}
               </span>
             ))}
@@ -37,6 +38,12 @@ const Table = ({ headers, bodyTable, information }) => {
       })}
     </div>
   );
+};
+
+Table.propTypes = {
+  headers: PropTypes.array.isRequired,
+  bodyTable: PropTypes.array.isRequired,
+  information: PropTypes.array.isRequired,
 };
 
 export default Table;
