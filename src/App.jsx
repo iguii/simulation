@@ -4,6 +4,7 @@ import "./App.css";
 
 import Home from "./pages/Home";
 import Dados from "./pages/Dados";
+import Gallina from "./pages/Gallina";
 
 function App() {
   return (
@@ -14,6 +15,11 @@ function App() {
           exact
           path="/dados"
           element={<Dados title="Lanzamiento de dados" />}
+        />
+        <Route
+          exact
+          path="/gallina"
+          element={<Gallina title="Gallina ponedora de huevos" />}
         />
       </Routes>
     </Router>
